@@ -26,6 +26,16 @@ steps:
       - 1.0.2
       - latest
 
+services:
+- name: smtp
+  image: catatnight/postfix
+  environment:
+    ports: 25
+    maildomain: cloud.drone.io
+    smtp_user: user:pwd
+    messageSizeLimit: 40960000
+    mailboxSizeLimit: 40960000
+  
 - name: notify
   image: drillster/drone-email
   settings: 
@@ -37,14 +47,3 @@ steps:
     from: pipeline@cloud.drone.io
     when:
       status: [ changed, success, failure ]
-
-services:
-- name: smtp
-  image: catatnight/postfix
-  environment:
-    ports: 25
-    maildomain: cloud.drone.io
-    smtp_user: user:pwd
-    messageSizeLimit: 40960000
-    mailboxSizeLimit: 40960000
-    
