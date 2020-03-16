@@ -25,8 +25,7 @@ steps:
     tags:
       - 1.0.2
       - latest
-     
-services:
+
 - name: smtp
   image: catatnight/postfix
   environment:
