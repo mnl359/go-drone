@@ -14,7 +14,6 @@ steps:
   - go get -v -t -d ./...
   - go test -v ./...
 
-services:
 - name: publish
   image: plugins/docker
   settings:
@@ -26,6 +25,3 @@ services:
     tags:
       - 1.0.2
       - latest
-  when:
-    branch:
-    - master
