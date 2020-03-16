@@ -28,14 +28,14 @@ func TestReverseTwoCharString(t *testing.T) {
 
 func TestReverseRepeatedCharsString(t *testing.T) {
 	s := "aaa"
-	e := "aaa"
+	e := "123"
 	r := Flip(s)
 	assert.Equal(t, e, r)
 }
 
 func TestReverseLongerString(t *testing.T) {
 	s := "longer and complex words"
-	e := "sdrow xelpmoc dna regnol"
+	e := "sdrow xelpmoc dna regnol muajaja"
 	r := Flip(s)
 	assert.Equal(t, e, r)
 }
